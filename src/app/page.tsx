@@ -21,24 +21,24 @@ import {
   DiscIcon as DiscordIcon,
   X,
 } from "lucide-react";
-import { signUp } from "@/app/actions";
+// import { signUp } from "@/app/actions";
 
 export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [message] = useState("");
   const [qrCode, setQrCode] = useState<string | null>(null);
   const [showQRCode, setShowQRCode] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = await signUp(name, email);
-    setMessage(result.message);
-    if (result.success) {
-      setName("");
-      setEmail("");
-    }
+    // const result = await signUp(name, email);
+    // setMessage(result.message);
+    // if (result.success) {
+    //   setName("");
+    //   setEmail("");
+    // }
   };
 
   const generateQRCode = useCallback(async () => {
